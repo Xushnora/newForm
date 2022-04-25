@@ -83,7 +83,7 @@
               <div class="col-md-6 inputs__group">
                 <input class="info__input fullname" type="text" placeholder="Full Name" required>
                 <input class="info__input email" type="email" placeholder="Email" required>
-                <input class="info__input mobile" type="text" placeholder="Mobile" required>
+                <input class="info__input mobile" type="number" placeholder="Mobile" required>
                 <input class="info__input city" type="text" placeholder="City" required>
               </div>
               <div class="col-md-6 gender__group">
@@ -132,17 +132,32 @@
   </div>
 </div>
 
+<button type = "button" class="close-btn" data-bs-toggle="modal"  data-bs-target="#staticBackdrop">
+  <i class='bx bx-x' style='color:#fd0000'></i>
+</button>
 
 <!-- Modal 2-->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-sm">
     <div class="modal-content">
       <div class="modal-body">
-        ...
+        <div class="quesionModalBtn">
+          <div class="questionBox">
+            <i class="bi bi-question-diamond-fill"></i>
+          </div>
+          <div class="removeModal">
+            <h3 class="removeTitle">Are you sure to delete this record?</h3>
+            <p class="removeText">You can't undo this operation</p>
+            <div class="removeBtns">
+              <button class="noBtn">No</button>
+              <button class="yesBtn">Yes</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
       </div>
     </div>
   </div>
@@ -160,10 +175,10 @@
         <div class="formBox">
           <form class="rowBox" id="form" action="#">
           <div class="col-md-6 inputs__group">
-              <input class="info__input fullname" type="text" placeholder="Full Name" required>
-              <input class="info__input email" type="email" placeholder="Email" required>
-              <input class="info__input mobile" type="text" placeholder="Mobile" required>
-              <input class="info__input city" type="text" placeholder="City" required>
+              <input class="info__input fullname editName" type="text" placeholder="Full Name" required>
+              <input class="info__input email editEmail" type="email" placeholder="Email" required>
+              <input class="info__input mobile editNumb" type="text" placeholder="Mobile" required>
+              <input class="info__input city editCity" type="text" placeholder="City" required>
           </div>
           <div class="col-md-6 gender__group">
               <div class="genderGroup">
@@ -179,7 +194,7 @@
               </div>
               <div>
               <div class="dataListBox">
-                  <input type="text" id="type" class="input-type" list="date" placeholder="Department" required>
+                  <input type="text" id="type" class="input-type editType" list="date" placeholder="Department" required>
                   <datalist id="date">
                   <option value="None">None</option>
                   <option value="Development">Development</option>

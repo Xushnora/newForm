@@ -349,6 +349,10 @@ ul {
           flex-direction: column;
 }
 
+li {
+  cursor: pointer;
+}
+
 .all-items:nth-child(5) {
   padding: 9.5px;
 }
@@ -392,5 +396,82 @@ ul {
 
 .close-btn .bx {
   font-size: 18px;
+}
+
+.quesionModalBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.removeTitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  text-align: center;
+}
+
+.removeText {
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+  font-size: 14px;
+  text-align: center;
+}
+
+.questionBox .bi {
+  font-size: 100px;
+  color: #f53434;
+}
+
+.removeBtns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.noBtn {
+  padding: 8px 22px;
+  font-size: 0.9375rem;
+  background-color: #e0e0e0;
+  border: none;
+  margin-right: 10px;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.noBtn:hover {
+  background-color: #777777;
+}
+
+.yesBtn {
+  padding: 8px 22px;
+  font-size: 0.9375rem;
+  background-color: red;
+  border: none;
+  margin-right: 10px;
+  color: #fff;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.yesBtn:hover {
+  background-color: #530303;
 }
 /*# sourceMappingURL=main.css.map */

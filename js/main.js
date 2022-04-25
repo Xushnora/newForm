@@ -12,6 +12,14 @@ let resetBtn = document.querySelector('.reset');
 let elForm = document.querySelector('#form');
 let elEmploye = document.querySelector('.employe');
 
+let cityValue = city.value;
+
+let editName = document.querySelector('.editName');
+let editEmail = document.querySelector('.editEmail');
+let editNumb = document.querySelector('.editNumb');
+let editCity = document.querySelector('.editCity');
+let editType = document.querySelector('.editType');
+
 
 elForm.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -95,9 +103,8 @@ function renderFunc (newObj) {
     let removeBtn = document.querySelectorAll('.close-btn');
     removeBtn.forEach(item => {
         item.addEventListener('click', (e) => {
-            // item.setAttribute("id", "staticBackdrop");
             e.preventDefault();
-            console.log(item);
+            // console.log(item);
 
             confirm("Rostan ham o'chirmoqchimisiz"); 
             e.currentTarget.parentNode.parentNode.parentNode.parentNode.remove()
@@ -105,15 +112,22 @@ function renderFunc (newObj) {
     })
 
     let editBtns = document.querySelectorAll('.edit-btn');
+    let nameItem = document.querySelector('.employe-item');
+    let emailItem = document.querySelector('.email-item');
+    let mobileItem = document.querySelector('.mobile-item');
+    let departmentItem = document.querySelector('.department-item');
 
-    // editBtns.forEach(item => {
-    //     let editModal = document.createComment('div');
-    //     editModal.classList = "formBox";
-    //     editModal.innerHTML = `
-      
-    //     `
-    //     modalBodyEdit.appendChild(editBtns);
-    // })
+    editBtns.forEach(item => {
+        item.addEventListener('click', (e) =>{
+            e.preventDefault();
+
+            editName.value = nameItem.textContent;
+            editEmail.value = emailItem.textContent;
+            editNumb.value = mobileItem.textContent;
+            editType.value = departmentItem.textContent;
+            
+        })
+    })
 
 
 }
