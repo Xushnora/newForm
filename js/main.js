@@ -29,20 +29,13 @@ let yesBtn = document.querySelector('.yesBtn');
 elForm.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    let fullnameVal = fullname.value;
-    let emailVal = email.value;
-    let numberVal = mobile.value;
-    let cityVal = city.value;
-    let departmentVal = type.value;
-
-
     const newObj = 
         {
-            name: fullnameVal,
-            email: emailVal,
-            number: numberVal,
-            city: cityVal,
-            department: departmentVal,
+            name: fullname.value,
+            email: email.value,
+            number: mobile.value,
+            city: city.value,
+            department: type.value,
         }
 
     renderFunc(newObj);
@@ -63,7 +56,6 @@ resetBtn.addEventListener('click', (e) =>{
     city.value = ""
     type.value = ""
 });
-
 
 
 let modalBodyEdit = document.querySelector('.modalBodyEdit');
