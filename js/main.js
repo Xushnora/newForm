@@ -20,17 +20,29 @@ let editNumb = document.querySelector('.editNumb');
 let editCity = document.querySelector('.editCity');
 let editType = document.querySelector('.editType');
 
+// remove modal btn 
+
+let noBtn = document.querySelector('.noBtn');
+let yesBtn = document.querySelector('.yesBtn');
+
 
 elForm.addEventListener('submit', (e) =>{
     e.preventDefault();
 
+    let fullnameVal = fullname.value;
+    let emailVal = email.value;
+    let numberVal = mobile.value;
+    let cityVal = city.value;
+    let departmentVal = type.value;
+
+
     const newObj = 
         {
-            name: fullname.value,
-            email: email.value,
-            number: mobile.value,
-            city: city.value,
-            department: type.value,
+            name: fullnameVal,
+            email: emailVal,
+            number: numberVal,
+            city: cityVal,
+            department: departmentVal,
         }
 
     renderFunc(newObj);
@@ -50,13 +62,16 @@ resetBtn.addEventListener('click', (e) =>{
     mobile.value = ""
     city.value = ""
     type.value = ""
-})
+});
+
+
 
 let modalBodyEdit = document.querySelector('.modalBodyEdit');
 let addNewList = document.querySelector('.add-new-list');
+let modalRemoveBox = document.querySelector('.modalRemoveBox');
 
 function renderFunc (newObj) {
-    console.log(newObj);
+    // console.log(newObj);
 
     let box = document.createElement('div');
     box.classList = `newBox`
@@ -91,7 +106,7 @@ function renderFunc (newObj) {
             <button class="edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                 <i class='bx bx-edit-alt'></i>
             </button>
-            <button type = "button" class="close-btn" data-bs-toggle="modal"  data-bs-target="#staticBackdrop">
+            <button type = "button" class="close-btn">
                 <i class='bx bx-x' style='color:#fd0000'></i>
             </button>
         </li>
@@ -104,10 +119,23 @@ function renderFunc (newObj) {
     removeBtn.forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-            // console.log(item);
+            let targetBtn = e.currentTarget;
+            modalRemoveBox.classList.add('testRemove');
 
-            confirm("Rostan ham o'chirmoqchimisiz"); 
-            e.currentTarget.parentNode.parentNode.parentNode.parentNode.remove()
+            // confirm("Rostan ham o'chirmoqchimisiz"); 
+            yesBtn.addEventListener('click', (el) => {
+                if(el.target.textContent == 'Yes') {
+                    console.log("kirdi");
+                    targetBtn.parentNode.parentNode.parentNode.parentNode.remove()
+                    modalRemoveBox.classList.remove('testRemove');
+                }
+            });
+            noBtn.addEventListener('click', (el) => {
+                if(el.target.textContent == 'No') {
+                    modalRemoveBox.classList.remove('testRemove');
+                }
+            });
+
         })
     })
 
@@ -131,5 +159,6 @@ function renderFunc (newObj) {
 
 
 }
+
 
 
