@@ -123,6 +123,7 @@
     width: 90%;
     border: 1px solid #666;
     margin-bottom: 1rem;
+    outline: none;
 }
 
 .tableBlock {
@@ -377,6 +378,46 @@ li{
     opacity: 1;
 }
 
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.erorTextName {
+    font-size: 10px;
+    color: red;
+}
+
+.errorTextEmail {
+    font-size: 10px;
+    color: red;
+}
+
+.errorNumb {
+    font-size: 10px;
+    color: red;
+}
+
+.errorCity {
+    font-size: 10px;
+    color: red;
+}
+
+.errorType {
+    font-size: 10px;
+    color: red;
+}
+
+.greenBr {
+    border: 2px solid green;
+}
+
+.redBr {
+    border: 2px solid red;
+}
 
 
 
